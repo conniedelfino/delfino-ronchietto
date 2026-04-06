@@ -21,7 +21,7 @@ class SeccionPeliPopulares extends Component {
   render() {
     return (
       <section className="row cards" id="movies">
-        {this.state.peliculas.slice(0, 4).map((pelicula) => (
+        {this.state.peliculas.filter((pelicula, idx)=> idx < 4).map((pelicula) => (
           <CardMovie
             key={pelicula.id}
             id={pelicula.id}
