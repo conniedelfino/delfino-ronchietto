@@ -1,7 +1,7 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
-import Home from "./Screens/Home/Home";
+import Home from "./screens/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
@@ -11,10 +11,10 @@ return (
   <>
     <Header />
 
-    <Routes>
-      <Route path="/" element={<Home />} />
+    <Switch>
+      <Route path="/" exact={true} component={Home} />
 
-      {/* 
+      {/* hay que cambiar element x component
       <Route path="/" element={<Peliculas />} />
       <Route path="/" element={<Login />} />
       <Route path="/" element={<Register />} />
@@ -22,9 +22,7 @@ return (
       <Route path="/" element={<Favoritas />} />
        */}
       
-
-
-    </Routes>
+    </Switch>
 
     <Footer />
   </>
