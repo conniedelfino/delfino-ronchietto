@@ -1,6 +1,6 @@
 import React from "react";
-import PelisPopulares from "../../Components/PelisPopulares/PelisPopulares";
-import SeccionNowPlaying from "../../Components/NowPlaying/NowPlaying";
+import PelisPopulares from "../../components/PelisPopulares/PelisPopulares";
+import SeccionNowPlaying from "../../components/NowPlaying/NowPlaying";
 
 function Home() {
   return (
