@@ -7,10 +7,10 @@ function Home() {
     <>
 
 
-      <h2>Películas populares</h2>
+      <h2 className="alert alert-primary">Películas populares</h2>
       <PelisPopulares />
 
-      <h2>En disposición</h2>
+      <h2 className="alert alert-primary">En disposición</h2>
       <SeccionNowPlaying />
 
       

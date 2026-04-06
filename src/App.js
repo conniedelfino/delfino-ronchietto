@@ -13,6 +13,17 @@ return (
 
     <Routes>
       <Route path="/" element={<Home />} />
+
+      {/* 
+      <Route path="/" element={<Peliculas />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/" element={<Register />} />
+      <Route path="/" element={<Series />} />
+      <Route path="/" element={<Favoritas />} />
+       */}
+      
+
+
     </Routes>
 
     <Footer />
