@@ -12,10 +12,12 @@ function Header() {
   ];
 
   return (
-    <header>
-      <div className="logo-container">
-        <img className="logo" src="/img/fotocine.png" alt="Logo" />
-      </div>
+    <React.Fragment>
+        <img src="/img/fotocine.png" alt="Logo" />
+      
+
+      <h1>UdeSA Movies</h1>
+
       <nav>
         <ul className="nav nav-tabs my-4">
           {elements.map((element, idx) => (
@@ -23,7 +25,13 @@ function Header() {
           ))}
         </ul>
       </nav>
-    </header>
+
+      <form className="search-form" action="results.html" method="get">
+        <input type="text" name="searchData" placeholder="Buscar..." value=""/>
+        <button type="submit" className="btn btn-success btn-sm">Buscar</button>
+      </form>
+
+    </React.Fragment>
   );
 }
 

@@ -4,7 +4,7 @@ import SeccionNowPlaying from "../../components/NowPlaying/NowPlaying";
 
 function Home() {
   return (
-    <>
+    <div className="conteiner">
 
 
       <h2 className="alert alert-primary">Películas populares</h2>
@@ -14,7 +14,7 @@ function Home() {
       <SeccionNowPlaying />
 
       
-    </>
+    </div>
   );
 }
 

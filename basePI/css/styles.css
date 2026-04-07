@@ -16,14 +16,6 @@ nav {
     font-weight: bold;
 }
 
-.logo-container{
-    width: 8%;
-}
-
-.logo-container img{
-    width: 100%;
-}
-
 .search-form, .filter-form {
     padding: .5rem 0;
     margin-bottom: 20px;
