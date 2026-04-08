@@ -1,9 +1,9 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Home from "./screens/Home/Home";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Home from "./Screens/Home/Home";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
  
