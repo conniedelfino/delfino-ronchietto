@@ -13,7 +13,7 @@ function Header() {
 
   return (
     <React.Fragment>
-        <img src="/img/fotocine.png" alt="Logo" />
+        <img src="/img/fotocine.png" alt="Logo" className="logo"/>
       
 
       <h1>UdeSA Movies</h1>
