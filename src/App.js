@@ -4,29 +4,21 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./Screens/Home/Home";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
+import Series from "./Screens/Series/Series";
 
 function App() {
- 
-return (
-  <div className="container">
-    <Header />
+  return (
+    <div className="container">
+      <Header />
 
-    <Switch>
-      <Route path="/" exact={true} component={Home} />
+      <Switch>
+        <Route path="/" exact={true} component={Home} />
+        <Route path="/series" component={Series} />
+      </Switch>
 
-      {/* hay que cambiar element x component
-      <Route path="/" element={<Peliculas />} />
-      <Route path="/" element={<Login />} />
-      <Route path="/" element={<Register />} />
-      <Route path="/" element={<Series />} />
-      <Route path="/" element={<Favoritas />} />
-       */}
-      
-    </Switch>
-
-    <Footer />
-  </div>
-);
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
