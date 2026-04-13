@@ -6,6 +6,7 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Series from "./Screens/Series/Series";
 import Register from "./Screens/Register/Register";
+import Peliculas from "./Screens/Peliculas/Peliculas";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <Route path="/" exact={true} component={Home} />
         <Route path="/series" component={Series} />
+        <Route path="/peliculas" component={Peliculas} />
         <Route path="/register" component={Register} />
       </Switch>
 

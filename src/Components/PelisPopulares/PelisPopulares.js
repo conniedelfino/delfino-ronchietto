@@ -20,6 +20,9 @@ class SeccionPeliPopulares extends Component {
 
   render() {
     return (
+      <>
+    
+      <h2 className="alert alert-primary">Peliculas</h2>
       <section className="row cards" id="movies">
         {this.state.peliculas.filter((pelicula, idx)=> idx < 4).map((pelicula) => (
           <CardMovie
@@ -31,6 +34,7 @@ class SeccionPeliPopulares extends Component {
           />
         ))}
       </section>
+      </>
     );
   }
 }
