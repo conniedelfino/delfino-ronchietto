@@ -1,21 +1,8 @@
-import { render } from "@testing-library/react";
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
 
-class CardMovie extends Component{
-    constructor(props){
-        super(props)
-        this.state ={
-            datos : [],
-        }
-    }
-    verMas(){
-        this.setState({
-            verMas: !this.state.verMas
-        })
-    }
-    render(){
-         return(
+function Pelis(props) {
+    return(
         <article className="single-card-movie">
                 <img src={"https://image.tmdb.org/t/p/w342/" + props.imagen} className="card-img-top"
                     alt={props.titulo}/>
@@ -26,10 +13,9 @@ class CardMovie extends Component{
                     <Link to={`/pelicula/${props.id}`}>
                     <button className="btn btn-primary">Ver Más</button>
                     </Link>
-                    <a href="" className="btn alert-primary">🩶</a>
                 </div>
             </article>
     )
-    }
 }
-export default CardMovie;
+
+export default Pelis;
