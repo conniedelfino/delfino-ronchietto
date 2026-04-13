@@ -5,6 +5,7 @@ import Home from "./Screens/Home/Home";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Series from "./Screens/Series/Series";
+import Register from "./Screens/Register/Register";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Switch>
         <Route path="/" exact={true} component={Home} />
         <Route path="/series" component={Series} />
+        <Route path="/register" component={Register} />
       </Switch>
 
       <Footer />
