@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 function FormRegister(){
-    let usuarioACrear = 
+    let usuarioACrear = {}
     return(
         <React.Fragment>
             <form action="" method="get">
