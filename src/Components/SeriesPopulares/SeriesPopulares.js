@@ -30,6 +30,7 @@ class SeccionSeriesPopulares extends Component {
             titulo={series.name}
             descripcion={series.overview}
             imagen={series.poster_path}
+            tipo = "serie"
           />
         ))}
       </section>

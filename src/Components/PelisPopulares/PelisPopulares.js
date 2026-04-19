@@ -31,6 +31,7 @@ class SeccionPeliPopulares extends Component {
             titulo={pelicula.title}
             descripcion={pelicula.overview}
             imagen={pelicula.poster_path}
+            tipo = "pelicula"
           />
         ))}
       </section>

@@ -7,6 +7,8 @@ import Footer from "./Components/Footer/Footer";
 import Series from "./Screens/Series/Series";
 import Register from "./Screens/Register/Register";
 import Peliculas from "./Screens/Peliculas/Peliculas";
+import MovieDetails from "./Screens/DetallesPelis/DetallesPelis";
+import SeriesDetails from "./Screens/DetallesSeries/DetallesSeries";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         <Route path="/series" component={Series} />
         <Route path="/peliculas" component={Peliculas} />
         <Route path="/register" component={Register} />
+        <Route path="/pelicula/:id" component={MovieDetails} />
+        <Route path="/serie/:id" component={SeriesDetails} />
+
       </Switch>
 
       <Footer />
