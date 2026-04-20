@@ -8,7 +8,7 @@ import Register from "./Screens/Register/Register";
 import Peliculas from "./Screens/Peliculas/Peliculas";
 import MovieDetails from "./Screens/DetallesPelis/DetallesPelis";
 import SeriesDetails from "./Screens/DetallesSeries/DetallesSeries";
-import Login from "./Screens/Login/Login"
+import Login from "./Screens/Login/Login";
 
 function App() {
   return (
