@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
 import Home from "./Screens/Home/Home";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -9,6 +8,7 @@ import Register from "./Screens/Register/Register";
 import Peliculas from "./Screens/Peliculas/Peliculas";
 import MovieDetails from "./Screens/DetallesPelis/DetallesPelis";
 import SeriesDetails from "./Screens/DetallesSeries/DetallesSeries";
+import Login from "./Screens/Login/Login"
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
         <Route path="/register" component={Register} />
         <Route path="/pelicula/:id" component={MovieDetails} />
         <Route path="/serie/:id" component={SeriesDetails} />
+        <Route path="/login" component={Login}/>
 
       </Switch>
 

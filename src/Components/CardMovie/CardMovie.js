@@ -1,36 +1,38 @@
-import { render } from "@testing-library/react";
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
 
 class CardMovie extends Component{
     constructor(props){
-        super(props)
+        super(props);
         this.state ={
-            datos : [],
-        }
+            verMas : false
+        };
     }
-    verMas(){
+
+    mostrar(){
         this.setState({
             verMas: !this.state.verMas
-        })
+        });
     }
+
     render(){
          return(
-        <article className="single-card-movie">
+            <article className="single-card-movie">
                 <img src={"https://image.tmdb.org/t/p/w342/" + this.props.imagen} className="card-img-top"
                     alt={this.props.titulo}/>
 
                 <div className="cardBody">
                     <h5 className="card-title">{this.props.titulo}</h5>
-                    <p className="card-text">{this.props.descripcion}</p>
-                    <button className="btn btn-primary">Ver Más</button>
+                    {this.state.verMas ? (<p className="card-text">{this.props.descripcion}</p>) : null}
+                    <button className="btn btn-primary" onClick={()=> this.mostrar}>{this.state.verMas ? "Ver menos" : "Ver Más"}</button>
                     <Link to={`/${this.props.tipo}/${this.props.id}`}>
-                    <button className="btn btn-primary">Detalle</button>
+                        <button className="btn btn-primary">Detalle</button>
                     </Link>
-                    <a href="" className="btn alert-primary">🩶</a>
+                    <button href="" className="btn alert-primary">🩶</button>
                 </div>
             </article>
-    )
+    );
     }
 }
+
 export default CardMovie;

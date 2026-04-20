@@ -19,11 +19,15 @@ class SeccionPeliPopulares extends Component {
   }
 
   render() {
+    if (this.state.peliculas.length === 0){
+      return 
+        <h3>cargando...</h3>
+    }
+    
     return (
-      <>
+      <section className="row cards" id="movies">
     
       <h2 className="alert alert-primary">Peliculas</h2>
-      <section className="row cards" id="movies">
         {this.state.peliculas.filter((pelicula, idx)=> idx < 4).map((pelicula) => (
           <CardMovie
             key={pelicula.id}
@@ -35,7 +39,6 @@ class SeccionPeliPopulares extends Component {
           />
         ))}
       </section>
-      </>
     );
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import Cookies from 'universal-cookie'
 
+/*
 const cookies = new Cookies()
 class MiFuncion extends Component {
     
@@ -14,4 +15,6 @@ class Login extends Component{
         }
     }
 }
+*/
 
+export default Login;

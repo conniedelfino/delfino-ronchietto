@@ -19,6 +19,10 @@ class SeccionNowPlaying extends Component {
   }
 
   render() {
+    if (this.state.peliculas.length === 0){
+      return <h3>cargando..</h3>;
+    }
+
     return (
       <section className="row cards" id="now-playing">
         {this.state.peliculas.slice(0, 4).map((pelicula) => (
@@ -28,6 +32,7 @@ class SeccionNowPlaying extends Component {
             titulo={pelicula.title}
             descripcion={pelicula.overview}
             imagen={pelicula.poster_path}
+            tipo="pelicula"
           />
         ))}
       </section>
