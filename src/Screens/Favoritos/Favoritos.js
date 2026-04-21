@@ -1,7 +1,7 @@
 import react, {Component} from "react";
 
 class Favoritos extends component{
-    contructor(props){
+    constructor(props){
         super(props);
         this.state = {
             favoritas:[]
