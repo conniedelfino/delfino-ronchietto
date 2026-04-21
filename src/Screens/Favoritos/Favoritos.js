@@ -1,12 +1,32 @@
-import React from "react";
+import react, {Component} from "react";
 
-function Favoritos(){
-    return (
-        <section className="container my-4">
-            <h2>Favoritos</h2>
-            <p></p>
-        </section>
-    );
+class Favoritas extends component{
+    contructor(props){
+        super(props);
+        this.state = {
+            favoritas:[]
+        }
+    }
+    componentDidMount(){
+        let storage = localStorage.getItem("favoritos");
+        if (storage !== null){
+            this.setState({
+                favoritas: JSON.parse(storage)
+            })
+        }
+    }
+    render(){
+        return(
+            <>
+            <h2>Favoritas</h2>
+            {this.state.favoritas.length === 0 ? (
+                <p>No hay nada guardado en favoritas</p>
+            ) : (
+                this.state.favoritas.map((id) => <p key={id}>{id}</p>)
+            )}
+            </>
+        )
+    }
 }
 
-export default Favoritos;
+export default Favoritas
