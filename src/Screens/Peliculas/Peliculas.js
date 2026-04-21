@@ -1,6 +1,4 @@
 import React, {Component} from "react";
-import CradMovie from "../../Components/CardMovie/CardMovie"
-import SeccionPeliPopulares from "../../Components/PelisPopulares/PelisPopulares";
 import CardMovie from "../../Components/CardMovie/CardMovie";
 
 const apikey = "34b4c2e895ea107e9ad43461851606f7";
@@ -19,8 +17,10 @@ class Peliculas extends Component{
         fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}`)
         .then((response)=> response.json())
         .then((data)=> this.setState({
-            peliculas: data.results, pagina: 1
-        }))
+            peliculas: data.results, 
+            pagina: 1
+            })
+        )
         .catch((error)=> console.log(error));
     }
 
@@ -30,7 +30,7 @@ class Peliculas extends Component{
 
     controlarInput(event){
         this.setState({
-            valor: event.target.value
+            busqueda: event.target.value
         });
     }
 
@@ -49,7 +49,7 @@ class Peliculas extends Component{
     }
 
 render(){
-    let peliculasFiltro = this.state.peliculas.filter((pelicula)=> pelicula.title.toLowerCase().inlcudes(this.state.busqueda.toLowerCase())
+    let peliculasFiltro = this.state.peliculas.filter((pelicula)=> pelicula.title.toLowerCase().includes(this.state.busqueda.toLowerCase())
 );
 if (this.state.peliculas.length === 0){
     return <h3>cargabdo..</h3>;
@@ -58,8 +58,7 @@ if (this.state.peliculas.length === 0){
 return(
     <React.Fragment>
         <form onSubmit={(event)=> this.evitarSubmit(event)}>
-            <input type="text" value={this.state.busqueda} onChange={(event)=> this.controlarImput(event)} placeholder="filtrar pelis">
-            </input>
+            <input type="text" value={this.state.busqueda} onChange={(event)=> this.controlarImput(event)} placeholder="filtrar pelis" />
         </form>
 
         <section className="row cards">
@@ -69,7 +68,7 @@ return(
 
         </section>
 
-        <button onClick={()=>this.cargarMas()}>cargar más</button>
+        <button onClick={()=>this.cargarMas()}>Cargar más</button>
 
     </React.Fragment>
 );
