@@ -1,5 +1,10 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
+{/* 
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
+*/}
 
 class CardMovie extends Component{
     constructor(props){
@@ -9,9 +14,11 @@ class CardMovie extends Component{
         };
     }
 
+    
+
     mostrar(){
         this.setState({
-            verMas: !this.state.verMas
+            verMas: this.state.verMas ? false : true
         });
     }
 
@@ -24,11 +31,11 @@ class CardMovie extends Component{
                 <div className="cardBody">
                     <h5 className="card-title">{this.props.titulo}</h5>
                     {this.state.verMas ? (<p className="card-text">{this.props.descripcion}</p>) : null}
-                    <button className="btn btn-primary" onClick={()=> this.mostrar}>{this.state.verMas ? "Ver menos" : "Ver Más"}</button>
+                    <button className="btn btn-primary" onClick={()=> this.mostrar()}>{this.state.verMas ? "Ver menos" : "Ver más"}</button>
                     <Link to={`/${this.props.tipo}/${this.props.id}`}>
                         <button className="btn btn-primary">Detalle</button>
                     </Link>
-                    <button href="" className="btn alert-primary">🩶</button>
+                    <button className="btn alert-primary">🩶</button>
                 </div>
             </article>
     );

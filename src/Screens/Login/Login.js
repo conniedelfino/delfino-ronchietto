@@ -27,7 +27,7 @@ class Login extends Component {
 
         if (usersStorage === null){
             this.setState({
-                error: "algo esta incorrecto"
+                error: "Credenciales incorrectas"
             });
             return;
         }
@@ -36,16 +36,16 @@ class Login extends Component {
 
         let usersFiltrado = usersParseado.filter((user)=> user.email === this.state.email);
 
-        if (usersFiltrado.lenght === 0){
+        if (usersFiltrado.length === 0){
             this.setState({
-                error: "algo esta incorrecto"
+                error: "Credenciales incorrectas"
             });
             return;
         }
 
         if (usersFiltrado[0].password !== this.state.password){
             this.setState({
-                error: "algo esta incorrecto"
+                error: "Credenciales incorrectas"
             });
             return;
         }
@@ -69,16 +69,16 @@ class Login extends Component {
 
                 <form onSubmit={(event) => this.submitForm(event)}>
                     <div>
-                        <label>email</label>
-                        <input type="text" name="email" value="this.state.email" onChange={(e)=> this.guardarValor(event)} />
+                        <label>Email</label>
+                        <input type="text" name="email" value={this.state.email} placeholder="Ingresa aca tu email" onChange={(event)=> this.guardarValor(event)} />
                     </div>
 
                     <div>
-                        <label>password</label>
-                        <input type="password" name="password" value="this.state.password" onChange={(e)=> this.guardarValor(event)} />
+                        <label>Contraseña</label>
+                        <input type="password" name="password" value={this.state.password} placeholder="Ingresa aca tu contraseña" onChange={(event)=> this.guardarValor(event)} />
                     </div>
 
-                    <button type="submit">ingresar</button>
+                    <button type="submit">Ingresar a mi cuenta</button>
 
                     {this.state.error !== ""? <p>{this.state.error}</p>: null}
 

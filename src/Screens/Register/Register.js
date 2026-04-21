@@ -83,16 +83,16 @@ class Register extends Component {
 
                 <from onSubmit={(event)=> this.submitForm(event)}>
                     <div>
-                        <label>email</label>
-                        <input type="text" name="email" value={this.state.email} onChange={(event)=> this.guardarValor(event)} />
+                        <label>Email</label>
+                        <input type="text" name="email" value={this.state.email} placeholder="Ingresa aca tu email" onChange={(event)=> this.guardarValor(event)} />
                     </div>
 
                     <div>
-                        <label>password</label>
-                        <input type="password" name="password" value={this.state.password} onChange={(event)=> this.guardarValor(event)} />
+                        <label>Contraseña</label>
+                        <input type="password" name="password" value={this.state.password} placeholder="Ingresa aca tu contraseña" onChange={(event)=> this.guardarValor(event)} />
                     </div>
 
-                    <button type="submit">crear cuenta nueva</button>
+                    <button type="submit">Crear cuenta nueva</button>
                     {this.state.error !== "" ? <p>{this.state.error}</p> : null}
                 </from>
 
