@@ -19,10 +19,10 @@ class Favoritos extends component{
         return(
             <>
             <h2>Favoritos</h2>
-            {this.state.favoritas.length === 0 ? (
+            {this.state.favoritos.length === 0 ? (
                 <p>No hay nada guardado en favoritas</p>
             ) : (
-                this.state.favoritas.map((id) => <p key={id}>{id}</p>)
+                this.state.favoritoçs.map((id) => <p key={id}>{id}</p>)
             )}
             </>
         )
