@@ -58,7 +58,7 @@ if (this.state.peliculas.length === 0){
 return(
     <React.Fragment>
         <form onSubmit={(event)=> this.evitarSubmit(event)}>
-            <input type="text" value={this.state.busqueda} onChange={(event)=> this.controlarImput(event)} placeholder="filtrar pelis" />
+            <input type="text" value={this.state.busqueda} onChange={(event)=> this.controlarInput(event)} placeholder="filtrar pelis" />
         </form>
 
         <section className="row cards">

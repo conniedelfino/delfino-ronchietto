@@ -10,6 +10,7 @@ import MovieDetails from "./Screens/DetallesPelis/DetallesPelis";
 import SeriesDetails from "./Screens/DetallesSeries/DetallesSeries";
 import Login from "./Screens/Login/Login";
 import Favoritos from "./Screens/Favoritos/Favoritos"
+import Results from "./Components/Results/Results";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/serie/:id" component={SeriesDetails} />
         <Route path="/login" component={Login}/>
         <Route path="/favoritos" component={Favoritos}/>
+        <Route path="/resultados" component={Results} />
 
       </Switch>
 

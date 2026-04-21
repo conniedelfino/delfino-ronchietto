@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Redirect} from "react-router-dom";
 
 class Register extends Component {
     constructor (props){
@@ -8,7 +7,6 @@ class Register extends Component {
             email: "",
             password: "",
             error: "",
-            redirect: false
         };
     }
 
@@ -55,28 +53,19 @@ class Register extends Component {
             let usersEnJson = JSON.stringify(usersParseado);
             localStorage.setItem("users", usersEnJson);
 
-            this.setState({
-                redirect: true,
-                error:""
-            });
+            this.props.history.push("/login");
+
         }else{
             let usersInicial = [crearUsuario];
             let usersEnJson = JSON.stringify(usersInicial);
             localStorage.setItem("users", usersEnJson);
 
-            this.setState({
-                redirect: true,
-                error:""
-            });
+            this.props.history.push("/login");
 
         }
     }
 
     render(){
-        if (this.state.redirect){
-            return <Redirect to="/login" />;
-        }
-
         return(
             <section className="container my-4">
                 <h2>Crear cuenta</h2>

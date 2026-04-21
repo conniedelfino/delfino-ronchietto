@@ -14,10 +14,10 @@ class Series extends Component{
     }
 
     componentDidMount(){
-        fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}`)
+        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${apikey}&page=1`)
         .then((response)=> response.json())
         .then((data)=> this.setState({
-            peliculas: data.results, 
+            series: data.results, 
             pagina: 1
             })
         )
@@ -36,11 +36,11 @@ class Series extends Component{
 
     cargarMas(){
         let paginaSiguiente = this.state.pagina + 1;
-        fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}`)
+        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${apikey}&page=${paginaSiguiente}`)
         .then((response)=> response.json())
         .then((data)=>
             this.setState({
-                peliculas: this.state.peliculas.concat(data.results),
+                series: this.state.series.concat(data.results),
                 pagina: paginaSiguiente
             })
         )
@@ -49,21 +49,21 @@ class Series extends Component{
     }
 
 render(){
-    let peliculasFiltro = this.state.peliculas.filter((pelicula)=> pelicula.title.toLowerCase().includes(this.state.busqueda.toLowerCase())
+    let seriesFiltro = this.state.series.filter((serie)=> serie.name.toLowerCase().includes(this.state.busqueda.toLowerCase())
 );
-if (this.state.peliculas.length === 0){
-    return <h3>cargabdo..</h3>;
+if (this.state.series.length === 0){
+    return <h3>cargando..</h3>;
 }
 
 return(
     <React.Fragment>
         <form onSubmit={(event)=> this.evitarSubmit(event)}>
-            <input type="text" value={this.state.busqueda} onChange={(event)=> this.controlarImput(event)} placeholder="filtrar pelis" />
+            <input type="text" value={this.state.busqueda} onChange={(event)=> this.controlarInput(event)} placeholder="filtrar series" />
         </form>
 
         <section className="row cards">
-            {peliculasFiltro.map((pelicula)=>(
-                <CardMovie key={pelicula.id} id={pelicula.id} titulo={pelicula.title} descripcion={pelicula.overview} imagen={pelicula.poster_path} tipo="pelicula" />
+            {seriesFiltro.map((serie)=>(
+                <CardMovie key={serie.id} id={serie.id} titulo={serie.name} descripcion={serie.overview} imagen={serie.poster_path} tipo="serie" />
             ))}
 
         </section>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import {Redirect} from "react-router-dom";
 import Cookies from "universal-cookie"
 
 const cookies = new Cookies()
@@ -11,7 +10,6 @@ class Login extends Component {
             email: "",
             password: "",
             error: "",
-            redirect: false
         };
     }
 
@@ -52,17 +50,10 @@ class Login extends Component {
 
         cookies.set("auth-user", this.state.email, {path: "/"});
 
-        this.setState({
-            redirect: true,
-            error: ""
-        });
+        this.props.history.push("/");
     }
 
     render(){
-        if (this.state.redirect){
-            return <Redirect to="/" />
-        }
-
         return(
             <section className="container my-4">
                 <h2>Login</h2>
