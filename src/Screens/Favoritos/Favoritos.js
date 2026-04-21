@@ -1,6 +1,6 @@
 import react, {Component} from "react";
 
-class Favoritas extends component{
+class Favoritos extends component{
     contructor(props){
         super(props);
         this.state = {
@@ -18,7 +18,7 @@ class Favoritas extends component{
     render(){
         return(
             <>
-            <h2>Favoritas</h2>
+            <h2>Favoritos</h2>
             {this.state.favoritas.length === 0 ? (
                 <p>No hay nada guardado en favoritas</p>
             ) : (
@@ -29,4 +29,4 @@ class Favoritas extends component{
     }
 }
 
-export default Favoritas
+export default Favoritos;
