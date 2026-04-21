@@ -25,7 +25,7 @@ class SeccionNowPlaying extends Component {
 
     return (
       <section className="row cards" id="now-playing">
-        {this.state.peliculas.slice(0, 4).map((pelicula) => (
+        {this.state.peliculas.filter((pelicula, idx)=> idx < 4).map((pelicula) => (
           <CardMovie
             key={pelicula.id}
             id={pelicula.id}

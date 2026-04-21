@@ -19,22 +19,23 @@ class SeccionSeriesPopulares extends Component {
   }
 
   render() {
+    if (this.state.series.lenght === 0){
+      return <h3>cargando.. </h3>;
+    }
+
     return (
-        <>
-    <h2 className="alert alert-primary">Series</h2>
       <section className="row cards" id="movies">
-        {this.state.series.filter((series, idx)=> idx < 4).map((series) => (
+        {this.state.series.filter((serie, idx)=> idx < 4).map((serie) => (
           <CardMovie
-            key={series.id}
-            id={series.id}
-            titulo={series.name}
-            descripcion={series.overview}
-            imagen={series.poster_path}
+            key={serie.id}
+            id={serie.id}
+            titulo={serie.name}
+            descripcion={serie.overview}
+            imagen={serie.poster_path}
             tipo = "serie"
           />
         ))}
       </section>
-      </>
     );
   }
 }

@@ -26,9 +26,7 @@ class SeccionPeliPopulares extends Component {
     
     return (
       <section className="row cards" id="movies">
-    
-      <h2 className="alert alert-primary">Peliculas</h2>
-        {this.state.peliculas.filter((pelicula, idx)=> idx < 4).map((pelicula) => (
+            {this.state.peliculas.filter((pelicula, idx)=> idx < 4).map((pelicula) => (
           <CardMovie
             key={pelicula.id}
             id={pelicula.id}

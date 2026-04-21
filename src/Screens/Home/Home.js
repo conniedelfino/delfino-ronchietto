@@ -1,20 +1,22 @@
 import React from "react";
-import PelisPopulares from "../../Components/PelisPopulares/PelisPopulares";
+import SeccionPeliPopulares from "../../Components/PelisPopulares/PelisPopulares";
 import SeccionNowPlaying from "../../Components/NowPlaying/NowPlaying";
-import { Link } from "react-router-dom";
 import Search from "../../Components/Search/Search";
+
 
 function Home() {
   return (
     <div className="container">
-
+      <h3>HOME</h3>
+      
       <Search />
       
       <h2 className="alert alert-primary">Películas populares</h2>
-      <PelisPopulares />
+      <SeccionPeliPopulares />
 
-      <h2 className="alert alert-primary">En disposición</h2>
+      <h2 className="alert alert-primary">En cartelera</h2>
       <SeccionNowPlaying />
+
     </div>
   );
 }
