@@ -1,24 +1,20 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import CardMovie from "../CardMovie/CardMovie";
 
 const apikey = "34b4c2e895ea107e9ad43461851606f7";
 
-class SeccionNowPlaying extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      peliculas: []
-    };
-  }
+function SeccionNowPlaying(props) {
 
-  componentDidMount() {
+  const [peliculas, setPeliculas] = useState([]);
+
+  useEffect(
+    () => {
     fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apikey}`)
       .then((response) => response.json())
-      .then((data) => this.setState({ peliculas: data.results }))
+      .then((data) => setPeliculas(data.results))
       .catch((error) => console.log(error));
-  }
+  }, []);
 
-  render() {
     if (this.state.peliculas.length === 0){
       return <h3>cargando..</h3>;
     }
@@ -38,6 +34,6 @@ class SeccionNowPlaying extends Component {
       </section>
     );
   }
-}
+
 
 export default SeccionNowPlaying;
