@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React,{ useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 {/* 
 import Cookies from "universal-cookie";
@@ -6,32 +6,37 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 */}
 
-class CardMovie extends Component{
-    constructor(props){
-        super(props);
-        this.state ={
-            verMas : false
-        };
+function CardMovie(props){
+
+    const [verMas, setVerMas] = useState(false)
+    const [esFavorito, setEsFavorito] = useState(false)
+
+    useEffect(
+        ()=> (
+            let favoritos = JSON.parse(localStorage.getItem("favoritos"))
+            if(!favoritos){
+                favoritos = []
+            }
+            let filtrados = favoritos.filter(fav => 
+                fav.id === this.props.id &&
+                fav.tipo === this.props.tipo
+            )
+            if (filtrados.length > 0){
+                this.setState({esFavorito: true})
+            }
+        )
+    )
+
+    function verMas(){
+        setVerMas(!verMas)
     }
 
-    
-
-    mostrar(){
-        this.setState({
-            verMas: this.state.verMas ? false : true
-        });
-    }
-
-    agregarFavorito() {
-        let favoritos = [];
-        let storage = localStorage.getItem("favoritos")
-
-        if (storage !==null){
-            favoritos = JSON.parse(storage);
+    function agregarFavorito(){
+        if (cookieStore.get("user-auth-cookie") === undefined){
+            props.history.push("/Registro")
         }
-        favoritos.push(this.props.id);
-        localStorage.setItem("favoritos", JSON.stringify(favoritos))
     }
+
 
     render(){
          return(
