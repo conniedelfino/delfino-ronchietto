@@ -5,24 +5,29 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 function Header(props) {
-  let usuarioLogeado = cookies.get("auth-user");
   const [usuariologueado, setUsuarioLogeado] = useState([]);
   
-  const [elements, setElements] = useState([
-    { nombre: "Home", ruta: "/" },
+    useEffect(()=> {
+      let usuarioLogeado = cookies.get("auth-user");
+
+      let elementosBase = [
+        { nombre: "Home", ruta: "/" },
     { nombre: "Películas", ruta: "/peliculas" },
-    { nombre: "Series", ruta: "/series" }]);
+    { nombre: "Series", ruta: "/series" }
+      ];
 
-  useEffect(()=> {}, [])
-  
-
-  if (usuarioLogeado){
+      if (usuarioLogeado){
     elements.push({nombre: "Favoritos", ruta: "/favoritos"});
   }
   else{
     elements.push({nombre: "Login", ruta: "/login"});
     elements.push({nombre: "Register", ruta: "/register"});
   }
+
+  setElements(elementosBase);
+
+
+    }, [])
 
   return (
     <React.Fragment>
