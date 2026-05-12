@@ -1,23 +1,19 @@
-import React, {Component} from "react";
+import React, { useState, useEffect } from "react";
 import {withRouter} from "react-router-dom";
 
-class Search extends Component {
-    constructor(props){
-        super(props);
-        this.state = {busqueda: ""};
-    }
-    controlarInput(event){
-        this.setState({
-            busqueda: event.target.value
-        });
+function Search(props) {
+
+    const [busqueda, setBusqueda] = useState("");
+
+    function controlarInput(event) {
+        setBusqueda(event.target.value);
     }
 
-    enviarForm(event){
+    function enviarForm(event) {
         event.preventDefault();
-        this.props.history.push("/resultados?busqueda")
+        props.history.push("/resultados?busqueda");
     }
 
-render(){
     return(
         <form onSubmit={(event)=> this.enviarForm(event)} className="search-form">
             <div>
@@ -28,6 +24,6 @@ render(){
         </form>
     );
 }
-}
+
 
 export default withRouter (Search);
